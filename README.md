@@ -15,7 +15,7 @@ common software is preinstalled, and more can be added on request.
 As on larger HPC systems, work is typically done by submitting jobs to a queue
 system, where they will be processed in order.
 
-![tensor cluster layout](figures/tensor_design_basic.png)
+![tensor cluster layout](figures/tensor_environment_240214.png)
 
 ## Connecting
 
