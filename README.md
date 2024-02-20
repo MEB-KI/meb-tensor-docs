@@ -217,6 +217,7 @@ For transferring files between your computer and tensor, you can use scp
 
 If you are connecting with KiTTY, there is a menu option to open WinSCP over the
 same connection as your terminal:
+
 ![Starting WinSCP from KiTTY](figures/tensor_kitty_winscp.png)
 
 [rclone](https://rclone.org/) is available as a software module (`ml load
