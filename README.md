@@ -256,17 +256,25 @@ KEYTAB="$HOME/.kt"
 # restore echo if interrupted while entering password
 trap 'stty echo' EXIT
 
-# remove old keytab if it exists
-rm -f "$KEYTAB"
+# check for existing keytab - if it exists and is valid, quit,
+# otherwise remove it and make a new one
+if [ -f "$KEYTAB" ]; then
+        if kinit $USER@MEB.KI.SE -k -t "$KEYTAB" 2>/dev/null; then
+                echo "Valid keytab already exists in $KEYTAB" >&2
+                exit
+        else
+                rm -f "$KEYTAB"
+        fi
+fi
 
 # generate new keytab, prompting for password
 {
     echo "addent -password -p $USER@MEB.KI.SE -k 1 -e aes256-cts -s \"MEB.KI.SE$USER\""
-    systemd-ask-password --emoji=no --echo=no ""
+    systemd-ask-password --emoji=no --echo=no "Password for $USER@MEB.KI.SE:"
     echo "wkt \"$KEYTAB\""
     echo "q"
-} | ktutil
-echo
+} | ktutil >/dev/null
+
 ```
 
 ### Get a Kerberos ticket
