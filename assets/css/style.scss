@@ -2,3 +2,89 @@
 ---
 
 @import "{{ site.theme }}";
+
+body {
+    font:16px/24px "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    color:#2b2b2b;
+    margin: 0px;
+    padding:0px 0 20px 0px;
+    //background: url(../images/body-background.png) #eae6d1;
+}
+
+section {
+    width: 750px;
+    margin-top: 20px;
+}
+
+h2 {
+    border-bottom: 1px solid #d8dee4;
+    padding-bottom: 0.3em;
+}
+
+h3 {
+    font-size: 20px;
+    color: #393939;
+}
+
+nav {
+    top: 40px;
+    text-align: left;
+    
+    ul {
+        font-size: 14px;
+        line-height:24px;
+        
+        li {
+            padding: 5px;
+            line-height: 16px;
+            border-radius: 3px;
+            // padding-right:17px;
+            // position:relative;
+            // right:-12px;
+            
+            &.tag-h1 {
+                font-size: 1.2em;
+                
+                a {
+                    font-weight: bold;
+                    color: #333;
+                }
+                
+                + .tag-h2 {
+                    
+                }
+            }
+            
+            &.tag-h2 {
+                
+                font-size: 1.2em;
+                + .tag-h1 {
+                    margin-top:10px;
+                }
+            }
+            
+            &.tag-h3 {
+                padding-left: 16px;            
+            }
+            
+            &.current {
+                background-color: #d0d0d0;
+            }
+        }
+        
+        a {
+            color: #666;
+            
+            &:hover { 
+                color: #999; 
+                font-weight: bold;
+            }
+        }
+        
+        // .active {
+            //   border-right:solid 4px #39C;
+            //   padding-right:13px;
+            // }
+        }
+    }
+    
