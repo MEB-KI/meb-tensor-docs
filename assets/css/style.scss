@@ -2,6 +2,7 @@
 ---
 
 @import "{{ site.theme }}";
+@import "rouge-github.scss";
 
 body {
     font:16px/24px "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
@@ -80,11 +81,13 @@ nav {
                 font-weight: bold;
             }
         }
-        
-        // .active {
-            //   border-right:solid 4px #39C;
-            //   padding-right:13px;
-            // }
-        }
     }
+}
+    
+code {
+    font: 13px/16px 'Lucida Sans', Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+    color:#333;
+    text-shadow: none;
+    background: #f0f0f0;
+}
     
