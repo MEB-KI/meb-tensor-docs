@@ -1,7 +1,7 @@
 # User documentation for the tensor compute cluster at MEB
 
 Robert Karlsson
-2024-02-20
+2024-02-27
 
 ## What is tensor?
 
@@ -67,13 +67,13 @@ script](https://lmod.readthedocs.io/en/latest/010_user.html#controlling-modules-
 
 To see the current list of available modules (including dependencies), type `ml
 avail`. The following packages (+ dependencies) are installed as of 2024-02-19.
+<!-- cat /nfs/sw/eb/meb-eb/tensor_software.yaml | sed -r 's/(-((GCC)|(gfbf)).*)?.eb[: ]*$//' | egrep -v '^[ ]{4,}'  | sed -r 's/([^[:blank:]])-/\1 /' | sed 's/^  #/###/' -->
 
-```
-  # statistics
+### statistics
   - R 4.3.2
   - rstudio 2023.09.1
   
-  # genetics
+### genetics
   - gtool 0.7.5
   - qctool 2.2.0
   - snptest 2.5.6
@@ -91,13 +91,14 @@ avail`. The following packages (+ dependencies) are installed as of 2024-02-19.
   - ldsc 2.0.1
   - gtc2vcf 2023-12-06
   
-  # general tools
+### general tools
   - ncdu 1.19
   - tmux 3.3a
   - rclone 1.65.2
   - parallel 20240122
   - nextflow 23.10.1
-```
+  - lftp 4.9.2
+  - mebauth 0.1
 
 ## Running jobs - Slurm
 
@@ -235,56 +236,25 @@ To set up credentials for a job using the kosmos SQL server and/or the Windows
 MEB password change cycle), and then request the actual Kerberos tickets using
 the keytab file.
 
-### Generate a keytab file
-
 > [!IMPORTANT]
 > Do not share your keytab file with anyone else - it is as sensitive as your
 > password!
 
-The following bash script asks for your MEB password, and then generates a
-keytab file in your home folder.
+A software module is available which automates the process. To use it, first
+run 
 
-```bash
-#!/bin/bash
-
-set -eu
-
-# refresh/create keytab file in ~/.kt by asking for password
-
-KEYTAB="$HOME/.kt"
-
-# restore echo if interrupted while entering password
-trap 'stty echo' EXIT
-
-# check for existing keytab - if it exists and is valid, quit,
-# otherwise remove it and make a new one
-if [ -f "$KEYTAB" ]; then
-        if kinit $USER@MEB.KI.SE -k -t "$KEYTAB" 2>/dev/null; then
-                echo "Valid keytab already exists in $KEYTAB" >&2
-                exit
-        else
-                rm -f "$KEYTAB"
-        fi
-fi
-
-# generate new keytab, prompting for password
-{
-    echo "addent -password -p $USER@MEB.KI.SE -k 1 -e aes256-cts -s \"MEB.KI.SE$USER\""
-    systemd-ask-password --emoji=no --echo=no "Password for $USER@MEB.KI.SE:"
-    echo "wkt \"$KEYTAB\""
-    echo "q"
-} | ktutil >/dev/null
-
+```bash 
+module load mebauth
 ```
 
-### Get a Kerberos ticket
+on the login node or in an interactive slurm session. Enter your MEB password
+when asked for it. After this, you can authenticate in any job (*including batch
+jobs*) by just loading the module. The tickets will stay valid for the duration
+of the job.
 
-The `k5start` program requests a Kerberos ticket, and runs in the background to
-make sure it is still valid until your Slurm job is finished.
+Non-interactive authentication by loading the `mebauth` module will work until
+your MEB password expires. At that time you must once again load the module in
+an interactive session to reauthenticate.
 
-Add the following line to the beginning of Slurm job scripts where Kerberos
-authentication is needed (or run it in your interactive job):
-
-```bash
-k5start -U -f ~/.kt -K 10 &
-```
+The `mebauth` module uses `ktutil` to save a keytab file in `$HOME/.kt`,
+and then calls `k5start` to request Kerberos tickets and keep them valid.
