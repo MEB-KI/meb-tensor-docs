@@ -222,7 +222,7 @@ same connection as your terminal:
 ![Starting WinSCP from KiTTY](figures/tensor_kitty_winscp.png)
 
 [rclone](https://rclone.org/) is available as a software module (`ml load
-rclone` )for syncing files in cloud storage to tensor.
+rclone`) for syncing files in cloud storage to tensor.
 
 ## Accessing the kosmos SQL server
 
