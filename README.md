@@ -207,7 +207,7 @@ needed after the job is finished, use the very fast node-local storage in
 
 Note that this folder is uniquely created for each Slurm job
 (so jobs cannot see /scratch files created in other jobs), and it is
-automaticaly cleared after the job ends (along with `/tmp/`).
+automatically cleared after the job ends (along with `/tmp/`).
 
 ### P: and Z: files
 
