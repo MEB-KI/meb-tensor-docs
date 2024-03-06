@@ -163,6 +163,14 @@ If any job parameters are left unspecified, the defaults are 2 CPU threads, 8 GB
 RAM per CPU, and 4 hours of run time. The requirements cannot be increased once
 the job has started.
 
+For example, an interactive session that runs for up to one day, with access to
+8 CPU cores and 64 GB RAM (given by default as 8 GB per allocated core), can be
+requested as:
+
+```bash
+salloc -c 8 -t 1-0
+```
+
 #### Interactive jobs with graphical display (X)
 
 First start an X server on your local computer. On Windows this means
