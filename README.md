@@ -140,7 +140,7 @@ See [the Slurm
 manual](https://slurm.schedmd.com/archive/slurm-23.11.1/sbatch.html) for how to
 format the requirements.
 
-If any job parameters are left unspecified, the defaults are 2 CPU threads, 8 GB
+If any job parameters are left unspecified, the defaults are 2 CPU threads, 7 GB
 RAM per CPU, and 4 hours of run time. The requirements cannot be increased once
 the job has started.
 
@@ -159,12 +159,12 @@ Start an interactive session on a compute node with the `salloc` command.
 Specify the CPU core, time, and memory requirements as options on the command
 line (`-c ...`, `-t ...`, `--mem=...` or `--mem-per-cpu=...`).
 
-If any job parameters are left unspecified, the defaults are 2 CPU threads, 8 GB
+If any job parameters are left unspecified, the defaults are 2 CPU threads, 7 GB
 RAM per CPU, and 4 hours of run time. The requirements cannot be increased once
 the job has started.
 
 For example, an interactive session that runs for up to one day, with access to
-8 CPU cores and 64 GB RAM (given by default as 8 GB per allocated core), can be
+8 CPU cores and 56 GB RAM (given by default as 7 GB per allocated core), can be
 requested as:
 
 ```bash
