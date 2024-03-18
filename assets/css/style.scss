@@ -15,6 +15,7 @@ body {
 section {
     width: 750px;
     margin-top: 20px;
+    box-sizing: border-box;
 }
 
 h2 {
@@ -91,3 +92,15 @@ code {
     background: #f0f0f0;
 }
     
+@media print, screen and (max-width: 1060px) {
+    section {
+        width: 100%;
+        margin: auto;
+        max-width: 100%;
+        padding: 20px;
+    }
+    header h1, section h1, footer h1 {
+        white-space: wrap;
+        overflow: visible;
+    }
+}
