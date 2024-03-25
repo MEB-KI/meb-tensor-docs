@@ -266,3 +266,8 @@ an interactive session to reauthenticate.
 
 The `mebauth` module uses `ktutil` to save a keytab file in `$HOME/.kt`,
 and then calls `k5start` to request Kerberos tickets and keep them valid.
+
+## Mailing list
+
+To communicate with (all) other users of the tensor cluster, send an email
+to [meb-tensor@emaillist.ki.se](mailto:meb-tensor@emaillist.ki.se).
