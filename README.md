@@ -66,7 +66,7 @@ To always load a certain set of modules, [add them to your `.bashrc` startup
 script](https://lmod.readthedocs.io/en/latest/010_user.html#controlling-modules-during-login).
 
 To see the current list of available modules (including dependencies), type `ml
-avail`. The following packages (+ dependencies) are installed as of 2024-02-19.
+avail`. The following packages (+ dependencies) are installed:
 <!-- cat /nfs/sw/eb/meb-eb/tensor_software.yaml | sed -r 's/(-((GCC)|(gfbf)).*)?.eb[: ]*$//' | egrep -v '^[ ]{4,}'  | sed -r 's/([^[:blank:]])-/\1 /' | sed 's/^  #/###/' -->
 
 ### statistics
@@ -190,6 +190,37 @@ salloc [other job parameters] --x11
 
 Graphical output from the allocated compute node (like a plot window in R)
 should now appear on your computer.
+
+### Monitoring Slurm jobs
+
+To see a list of the jobs currently running (and waiting to run) on the cluster,
+use [the `squeue`
+command](https://slurm.schedmd.com/archive/slurm-23.11.1/squeue.html). 
+
+The amount of job information shown can be controlled with flags. For example,
+`squeue -l` gives the headings `JOBID, PARTITION, NAME, USER, STATE, TIME,
+TIME_LIMIT, NODES, NODELIST(REASON)`.
+
+To monitor the resource usage (memory/CPU) of a running job, it is possible to
+run a monitoring command within an existing allocation (interactive or
+non-interactive). Run the following on the login node in a separate window or
+tmux pane to start htop next to your existing job:
+
+```bash
+srun --jobid=[job ID of interest] --overlap --pty htop
+```
+
+The job ID of the job to monitor is displayed when it is first submitted to the
+queue, and in `squeue` output.
+
+After a job has finished, a brief summary of memory and CPU usage can be
+displayed by running
+
+```bash
+seff [job ID of interest]
+```
+This information can be useful when deciding how much memory/CPU to request for
+the next job.
 
 ## Storage
 
