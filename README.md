@@ -302,3 +302,9 @@ and then calls `k5start` to request Kerberos tickets and keep them valid.
 
 To communicate with (all) other users of the tensor cluster, send an email
 to [meb-tensor@emaillist.ki.se](mailto:meb-tensor@emaillist.ki.se).
+
+## Getting an account
+
+If you want to work on tensor and don't have an account,
+[please apply through this form](https://www.meb.ki.se/sites/meb-it-internal/computing-resources-at-meb/#request_compute_server_account)
+(site only available from inside MEB or VDI).
