@@ -1,7 +1,7 @@
 # User documentation for the tensor compute cluster at MEB
 
 Robert Karlsson
-2024-02-27
+2024-04-15
 
 ## What is tensor?
 
@@ -72,6 +72,7 @@ avail`. The following packages (+ dependencies) are installed:
 ### statistics
   - R 4.3.2
   - rstudio 2023.09.1
+  - Stata 18
   
 ### genetics
   - gtool 0.7.5
