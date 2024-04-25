@@ -1,7 +1,7 @@
 # User documentation for the tensor compute cluster at MEB
 
 Robert Karlsson
-2024-04-15
+2024-04-25
 
 ## What is tensor?
 
@@ -174,9 +174,10 @@ salloc -c 8 -t 1-0
 
 #### Interactive jobs with graphical display (X)
 
-First start an X server on your local computer. On Windows this means
-starting the programs Xming or VcXsrv. On a Mac, try XQuartz. On Linux, an X
-server is usually already running, or you already know how to start one if not.
+First start an X server on your local computer. On Windows this means starting
+the program VcXsrv (available in MEB software center). On a Mac, try XQuartz. On
+Linux, an X server is usually already running, or you already know how to start
+one if not.
 
 In KiTTY, tick the box "Enable X11 forwarding" under `Connection -> SSH -> X11`
 before connecting. On Mac/Linux, add the `-Y ` flag to your `ssh` command, or
