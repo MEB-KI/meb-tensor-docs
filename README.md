@@ -175,9 +175,9 @@ salloc -c 8 -t 1-0
 #### Interactive jobs with graphical display (X)
 
 First start an X server on your local computer. On Windows this means starting
-the program VcXsrv (available in MEB software center). On a Mac, try XQuartz. On
-Linux, an X server is usually already running, or you already know how to start
-one if not.
+the program VcXsrv (available in MEB software center). The start menu entry for
+VcXsrv is "XLaunch". On a Mac, try XQuartz. On Linux, an X server is usually
+already running, or you already know how to start one if not.
 
 In KiTTY, tick the box "Enable X11 forwarding" under `Connection -> SSH -> X11`
 before connecting. On Mac/Linux, add the `-Y ` flag to your `ssh` command, or
@@ -201,7 +201,19 @@ command](https://slurm.schedmd.com/archive/slurm-23.11.1/squeue.html).
 
 The amount of job information shown can be controlled with flags. For example,
 `squeue -l` gives the headings `JOBID, PARTITION, NAME, USER, STATE, TIME,
-TIME_LIMIT, NODES, NODELIST(REASON)`.
+TIME_LIMIT, NODES, NODELIST(REASON)`. If the queue is long, and you only want
+to see your own jobs, try `squeue --me`.
+
+If you want to cancel a job that is running or waiting in the queue, use [the 
+`scancel` command](https://slurm.schedmd.com/archive/slurm-23.11.1/scancel.html).
+
+```bash
+# cancel your job with jobid 12345
+scancel 12345
+
+# cancel ALL your running and queued jobs (use with caution)
+scancel --me
+```
 
 To monitor the resource usage (memory/CPU) of a running job, it is possible to
 run a monitoring command within an existing allocation (interactive or
