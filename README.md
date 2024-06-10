@@ -248,7 +248,9 @@ tensor nodes. Use these paths for long-term storage of data, code, and results.
 
 For temporary files created during a single Slurm job, which are no longer
 needed after the job is finished, use the very fast node-local storage in
-`/scratch/tmp/`.
+`/scratch/tmp/`. Each node's `/scratch/tmp` has a maximum capacity of 3.5 TB,
+which can be used by jobs on a first-come-first-served basis (to ensure
+access to the full capacity, you must reserve a full node).
 
 Note that this folder is uniquely created for each Slurm job
 (so jobs cannot see /scratch files created in other jobs), and it is
@@ -322,3 +324,9 @@ to [meb-tensor@emaillist.ki.se](mailto:meb-tensor@emaillist.ki.se).
 If you want to work on tensor and don't have an account,
 [please apply through this form](https://www.meb.ki.se/sites/meb-it-internal/computing-resources-at-meb/#request_compute_server_account)
 (site only available from inside MEB or VDI).
+
+---
+
+This manual maintained by Robert Karlsson, Rikard Öberg, Henric Winell
+
+Last update 2024-06-10
