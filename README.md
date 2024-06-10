@@ -1,8 +1,5 @@
 # User documentation for the tensor compute cluster at MEB
 
-Robert Karlsson
-2024-04-25
-
 ## What is tensor?
 
 Tensor is a small High Performance Computing cluster available to MEB
