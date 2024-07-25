@@ -68,6 +68,7 @@ avail`. The following packages (+ dependencies) are installed:
 
 ### statistics
   - R 4.3.2
+  - R 4.4.0
   - rstudio 2023.09.1
   - Stata 18
   
@@ -88,6 +89,7 @@ avail`. The following packages (+ dependencies) are installed:
   - samtools 1.19.2
   - ldsc 2.0.1
   - gtc2vcf 2023-12-06
+  - regenie 3.4.1
   
 ### general tools
   - ncdu 1.19
