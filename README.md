@@ -90,6 +90,7 @@ avail`. The following packages (+ dependencies) are installed:
   - ldsc 2.0.1
   - gtc2vcf 2023-12-06
   - regenie 3.4.1
+  - ricopili 2019_Oct_15.001
   
 ### general tools
   - ncdu 1.19
@@ -99,6 +100,17 @@ avail`. The following packages (+ dependencies) are installed:
   - nextflow 23.10.1
   - lftp 4.9.2
   - mebauth 0.1
+  - texlive 20240312
+
+### Installing additional software
+
+As on most systems, you can install the software you need in your home folder if
+it is not installed system-wide. If there is a package you think many users
+would benefit from having, or which cannot be easily installed in your home
+folder for some reason, contact MEB IT support.
+
+If you have the permissions required to install software modules system-wide,
+here is [a brief guide](/easybuild_admin_guide) on how to do it using Easybuild.
 
 ## Running jobs - Slurm
 
