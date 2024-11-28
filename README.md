@@ -110,7 +110,7 @@ would benefit from having, or which cannot be easily installed in your home
 folder for some reason, contact MEB IT support.
 
 If you have the permissions required to install software modules system-wide,
-here is [a brief guide](/easybuild_admin_guide) on how to do it using Easybuild.
+here is [a brief guide](easybuild_admin_guide) on how to do it using Easybuild.
 
 ## Running jobs - Slurm
 
