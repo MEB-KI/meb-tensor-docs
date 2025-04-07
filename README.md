@@ -150,7 +150,12 @@ as special comments at the start your script file (before any actual commands):
 
 See [the Slurm
 manual](https://slurm.schedmd.com/archive/slurm-23.11.1/sbatch.html) for how to
-format the requirements.
+format the requirements. Some examples of commonly used formats: `-c 2`, `-c 4`, 
+`-c 8`, `-c 48` for allocating, 2, 4, 8, or 48 CPU cores; `-t 1:00:00`, `-t 0-8`,
+`-t 5-0` for a job runtime of up to 1 hour, 8 hours, or 5 days; `--mem=7000`,
+`--mem=32G` for requesting 7000 megabytes (default unit) or 32 gigabytes. Note
+that the allocated memory cannot be used by others while your job is running
+so try not to ask for more than you need!
 
 If any job parameters are left unspecified, the defaults are 2 CPU threads, 7 GB
 RAM per CPU, and 4 hours of run time. The requirements cannot be increased once
