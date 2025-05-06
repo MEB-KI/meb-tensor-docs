@@ -64,43 +64,41 @@ script](https://lmod.readthedocs.io/en/latest/010_user.html#controlling-modules-
 
 To see the current list of available modules (including dependencies), type `ml
 avail`. The following packages (+ dependencies) are installed:
-<!-- cat /nfs/sw/eb/meb-eb/tensor_software.yaml | sed -r 's/(-((GCC)|(gfbf)).*)?.eb[: ]*$//' | egrep -v '^[ ]{4,}'  | sed -r 's/([^[:blank:]])-/\1 /' | sed 's/^  #/###/' -->
+<!-- cat /nfs/sw/eb/meb-eb/tensor_software.yaml | sed -r 's/(-((GCC)|(gfbf)).*)?.eb[: ]*$//' | egrep -v '^[ ]{4,}'  | sed -r 's/([^[:blank:]])-/\1 /' | sed 's/^  #/###/' | awk '!/^  -/ {if (printedsw) printf "\n"; print; printedsw=0} /^  -/ {sw=$2; ver=$3; if(lastsw != sw) {printf "%s  - %s %s", printedsw?"\n":"", sw, ver; lastvers=""} else {printf ", %s", ver}; lastsw=sw; lastvers=ver; printedsw=1} END {printf "\n"}' -->
 
 ### statistics
-  - R 4.3.2
-  - R 4.4.0
-  - rstudio 2023.09.1
+  - R 4.3.2, 4.4.0, 4.4.3
+  - rstudio 2023.09.1, 2024.12.1
   - Stata 18
   
 ### genetics
   - gtool 0.7.5
   - qctool 2.2.0
   - snptest 2.5.6
-  - gcta 1.94.1
-  - plink 1.07
-  - plink 1.90b7.1
-  - plink2 2.00a5.10
-  - metal 2011-03-25
-  - metal 2020-05-05
+  - gcta 1.94.1, 1.94.4
+  - plink 1.07, 1.90b7.1, 1.9.0-b.7.7
+  - plink2 2.00a5.10, 2.0.0-a.5.24, 2.0.0-a.6.12
+  - metal 2011-03-25, 2020-05-05
   - EIGENSOFT 8.0.0
   - bedtools 2.31.1
-  - htslib 1.19.1
-  - bcftools 1.19
-  - samtools 1.19.2
+  - htslib 1.19.1, 1.21
+  - bcftools 1.19, 1.21
+  - samtools 1.19.2, 1.21
   - ldsc 2.0.1
-  - gtc2vcf 2023-12-06
-  - regenie 3.4.1
+  - gtc2vcf 2023-12-06, 2025-01-03
+  - regenie 3.4.1, 4.1
   - ricopili 2019_Oct_15.001
   
 ### general tools
   - ncdu 1.19
-  - tmux 3.3a
-  - rclone 1.65.2
+  - tmux 3.3a, 3.5a
+  - rclone 1.65.2, 1.69.2
   - parallel 20240122
   - nextflow 23.10.1
   - lftp 4.9.2
-  - mebauth 0.1
+  - mebauth 0.2
   - texlive 20240312
+  - Java 21
 
 ### Installing additional software
 
