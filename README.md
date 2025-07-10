@@ -94,7 +94,7 @@ avail`. The following packages (+ dependencies) are installed:
   - tmux 3.3a, 3.5a
   - rclone 1.65.2, 1.69.2
   - parallel 20240122
-  - nextflow 23.10.1
+  - nextflow 23.10.1, 25.04.6
   - lftp 4.9.2
   - mebauth 0.2
   - texlive 20240312
