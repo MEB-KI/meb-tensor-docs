@@ -67,8 +67,8 @@ avail`. The following packages (+ dependencies) are installed:
 <!-- cat /nfs/sw/eb/meb-eb/tensor_software.yaml | sed -r 's/(-((GCC)|(gfbf)).*)?.eb[: ]*$//' | egrep -v '^[ ]{4,}'  | sed -r 's/([^[:blank:]])-/\1 /' | sed 's/^  #/###/' | awk '!/^  -/ {if (printedsw) printf "\n"; print; printedsw=0} /^  -/ {sw=$2; ver=$3; if(lastsw != sw) {printf "%s  - %s %s", printedsw?"\n":"", sw, ver; lastvers=""} else {printf ", %s", ver}; lastsw=sw; lastvers=ver; printedsw=1} END {printf "\n"}' -->
 
 ### statistics
-  - R 4.3.2, 4.4.0, 4.4.3
-  - rstudio 2023.09.1, 2024.12.1
+  - R 4.3.2, 4.4.0, 4.4.3, 4.5.1
+  - rstudio 2023.09.1, 2024.12.1, 2025.09.2
   - Stata 18
   
 ### genetics
@@ -119,7 +119,7 @@ nodes `tensor[1-7]` by submitting requests for resources to the Slurm job
 queue. This is a change from the recommendations for the older vector/scalar servers.
 
 The tensor cluster currently runs [Slurm version
-23.11.1](https://slurm.schedmd.com/archive/slurm-23.11.1/).
+25.05.4](https://slurm.schedmd.com/archive/slurm-25.05.4/).
 
 ### Batch jobs - `sbatch`
 
@@ -147,7 +147,7 @@ as special comments at the start your script file (before any actual commands):
 ```
 
 See [the Slurm
-manual](https://slurm.schedmd.com/archive/slurm-23.11.1/sbatch.html) for how to
+manual](https://slurm.schedmd.com/archive/slurm-25.05.4/sbatch.html) for how to
 format the requirements. Some examples of commonly used formats: `-c 2`, `-c 4`, 
 `-c 8`, `-c 48` for allocating, 2, 4, 8, or 48 CPU cores; `-t 1:00:00`, `-t 0-8`,
 `-t 5-0` for a job runtime of up to 1 hour, 8 hours, or 5 days; `--mem=7000`,
@@ -211,7 +211,7 @@ should now appear on your computer.
 
 To see a list of the jobs currently running (and waiting to run) on the cluster,
 use [the `squeue`
-command](https://slurm.schedmd.com/archive/slurm-23.11.1/squeue.html). 
+command](https://slurm.schedmd.com/archive/slurm-25.05.4/squeue.html). 
 
 The amount of job information shown can be controlled with flags. For example,
 `squeue -l` gives the headings `JOBID, PARTITION, NAME, USER, STATE, TIME,
@@ -219,7 +219,7 @@ TIME_LIMIT, NODES, NODELIST(REASON)`. If the queue is long, and you only want
 to see your own jobs, try `squeue --me`.
 
 If you want to cancel a job that is running or waiting in the queue, use [the 
-`scancel` command](https://slurm.schedmd.com/archive/slurm-23.11.1/scancel.html).
+`scancel` command](https://slurm.schedmd.com/archive/slurm-25.05.4/scancel.html).
 
 ```bash
 # cancel your job with jobid 12345
@@ -343,4 +343,4 @@ If you want to work on tensor and don't have an account,
 
 This manual maintained by Robert Karlsson, Rikard Öberg, Henric Winell
 
-Last update 2025-05-06
+Last update 2025-11-14
