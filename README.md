@@ -3,7 +3,7 @@
 ## What is tensor?
 
 Tensor is a small High Performance Computing cluster available to MEB
-researchers. It replaces previous compute servers `vector` and `scalar[1-4]`.
+researchers.
 
 The tensor cluster consists of a login node (`tensor`) and seven compute nodes
 (`tensor[1-7]`) with capable CPUs and fast local storage. A selection of
@@ -37,7 +37,7 @@ to `tensor` with your MEB username and password.
 
 > [!TIP]
 > Use SSH keys for passwordless login (see for example [instructions at
-> Uppmax](https://www.uppmax.uu.se/support/faq/login-problems-faq/how-do-i-use-ssh-keys-to-login-to-uppmax/))
+> Uppmax](https://web.archive.org/web/20240423201207/https://www.uppmax.uu.se/support/faq/login-problems-faq/how-do-i-use-ssh-keys-to-login-to-uppmax/))
 
 ## Software modules
 
