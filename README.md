@@ -258,6 +258,8 @@ Files in `/nfs/[projectname]/`, `/nfs/projects/[projectname]/`, and
 `/nfs/home/[username]/` are stored on fast network drives available from all
 tensor nodes. Use these paths for long-term storage of data, code, and results.
 
+Home directories have a quota limit of **100 GB per user**.
+
 ### /scratch
 
 For temporary files created during a single Slurm job, which are no longer
