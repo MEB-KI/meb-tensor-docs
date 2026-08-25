@@ -67,9 +67,10 @@ avail`. The following packages (+ dependencies) are installed:
 <!-- cat /nfs/sw/eb/meb-eb/tensor_software.yaml | sed -r 's/(-((GCC)|(gfbf)).*)?.eb[: ]*$//' | egrep -v '^[ ]{4,}'  | sed -r 's/([^[:blank:]])-/\1 /' | sed 's/^  #/###/' | awk '!/^  -/ {if (printedsw) printf "\n"; print; printedsw=0} /^  -/ {sw=$2; ver=$3; if(lastsw != sw) {printf "%s  - %s %s", printedsw?"\n":"", sw, ver; lastvers=""} else {printf ", %s", ver}; lastsw=sw; lastvers=ver; printedsw=1} END {printf "\n"}' -->
 
 ### statistics
-  - R 4.3.2, 4.4.0, 4.4.3, 4.5.1
-  - rstudio 2023.09.1, 2024.12.1, 2025.09.2
+  - R 4.3.2, 4.4.0, 4.4.3, 4.5.1, 4.6.1
+  - rstudio 2023.09.1, 2024.12.1, 2025.09.2, 2026.08.1
   - Stata 18
+  - JAGS 4.3.2
   
 ### genetics
   - gtool 0.7.5
