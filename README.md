@@ -120,7 +120,7 @@ nodes `tensor[1-7]` by submitting requests for resources to the Slurm job
 queue. This is a change from the recommendations for the older vector/scalar servers.
 
 The tensor cluster currently runs [Slurm version
-25.05.4](https://slurm.schedmd.com/archive/slurm-25.05.4/).
+26.05.4](https://slurm.schedmd.com/archive/slurm-26.05.4/).
 
 ### Batch jobs - `sbatch`
 
@@ -148,7 +148,7 @@ as special comments at the start your script file (before any actual commands):
 ```
 
 See [the Slurm
-manual](https://slurm.schedmd.com/archive/slurm-25.05.4/sbatch.html) for how to
+manual](https://slurm.schedmd.com/archive/slurm-26.05.4/sbatch.html) for how to
 format the requirements. Some examples of commonly used formats: `-c 2`, `-c 4`, 
 `-c 8`, `-c 48` for allocating, 2, 4, 8, or 48 CPU cores; `-t 1:00:00`, `-t 0-8`,
 `-t 5-0` for a job runtime of up to 1 hour, 8 hours, or 5 days; `--mem=7000`,
@@ -212,7 +212,7 @@ should now appear on your computer.
 
 To see a list of the jobs currently running (and waiting to run) on the cluster,
 use [the `squeue`
-command](https://slurm.schedmd.com/archive/slurm-25.05.4/squeue.html). 
+command](https://slurm.schedmd.com/archive/slurm-26.05.4/squeue.html). 
 
 The amount of job information shown can be controlled with flags. For example,
 `squeue -l` gives the headings `JOBID, PARTITION, NAME, USER, STATE, TIME,
@@ -220,7 +220,7 @@ TIME_LIMIT, NODES, NODELIST(REASON)`. If the queue is long, and you only want
 to see your own jobs, try `squeue --me`.
 
 If you want to cancel a job that is running or waiting in the queue, use [the 
-`scancel` command](https://slurm.schedmd.com/archive/slurm-25.05.4/scancel.html).
+`scancel` command](https://slurm.schedmd.com/archive/slurm-26.05.4/scancel.html).
 
 ```bash
 # cancel your job with jobid 12345
